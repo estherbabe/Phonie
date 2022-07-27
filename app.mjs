@@ -1,4 +1,18 @@
-var mtn = [];
+var mtn = [
+  "0803",
+  "0806",
+  "0703",
+  "0706",
+  "0813",
+  "0813",
+  "0816",
+  "0810",
+  "0814",
+  "0903",
+];
+var airtel = ["0802", "0808", "0708", "0812", "0701", "0902"];
+var glo = ["0805", "0807", "0705", "0815", "0811", "0905"];
+var etisalat = ["0809", "0818", "0817", "0909"];
 
 function startApp() {
   // Your entire app should not necessarily be coded inside this
