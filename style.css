@@ -79,17 +79,20 @@ img {
   margin-top: 0;
 }
 .mtn {
-  display: none;
+  /* display: none; */
 }
 
 .airtel {
-  display: none;
+  /* display: none; */
 }
 
 .glo {
-  display: none;
+  /* display: none; */
 }
 
-.mobile {
+.etisalat {
+  /* display: none; */
+}
+.noloveLogo {
   display: none;
 }
