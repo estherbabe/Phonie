@@ -1,4 +1,5 @@
 //====== telecom prefixes ======
+
 const networkThings = {
   mtn: ["0803", "0806", "0703", "0706", "0813", "0816", "0810", "0814", "0903"],
   airtel: ["0802", "0808", "0708", "0812", "0701", "0902"],
@@ -6,15 +7,16 @@ const networkThings = {
   etisalat: ["0809", "0818", "0817", "0909"],
 };
 
-// console.log("Can you see me?", networkThings["mtn"]);
-
 //======== telecom logos ========
+
 let mtnLogo = document.getElementsByClassName("mtn");
 let airtelLogo = document.getElementsByClassName("airtel");
 let gloLogo = document.getElementsByClassName("glo");
 let etisalatLogo = document.getElementsByClassName("etisalat");
 
 function startApp() {
+  //======= getting the user's input value while they type =======
+
   const userInput = document.querySelector("#output");
   userInput.addEventListener("input", getUserInput);
   function getUserInput() {
@@ -22,17 +24,22 @@ function startApp() {
     compareUserInput(userInputValue);
   }
 
+  // ====== A function comparing user's input with prefixes in the object(networkThings)======
+
   function compareUserInput(phoneNum) {
     console.log(phoneNum);
-    let nameOfNetworks = [];
 
+    // ====== creating an array to push all networkThings Keys & values ======
+
+    let nameOfNetworks = [];
     for (let networks in networkThings) {
       nameOfNetworks.push(networks);
     }
 
+    // ====== looping through the created array above ======
     for (const item of nameOfNetworks) {
       let array = networkThings[item];
-
+      console.log(array);
       for (let i = 0; i < array.length; i++) {
         let first4 = phoneNum.slice(0, 4);
         if (first4 == array[i]) {
