@@ -1,41 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Noto+Sans:wght@400;600;700&display=swap");
 
 * {
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Mochiy Pop One", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #0a0a0f;
+  background-color: #fff;
+  color: #0d0f26;
 }
 .container {
   max-width: 960px;
   margin: auto;
   width: 100%;
-  padding: 50px;
+  padding: 0 50px 50px;
 }
 nav {
-  background-color: #0a0a0f;
+  background-color: #fff;
   padding: 20px;
 }
 
 h2 {
   font-family: "Mochiy Pop One", sans-serif;
-  color: #fff;
   font-size: 2rem;
   font-weight: 600;
   letter-spacing: 2.5px;
 }
 
+.hero-headline {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 p {
   display: flex;
   justify-content: center;
-  font-weight: bold;
-  color: #222231;
-  font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 form {
   max-width: 600px;
@@ -45,54 +46,50 @@ form {
   row-gap: 0.5rem;
   justify-content: center;
 }
-.phone {
-  width: 300px;
+input::placeholder {
+  font-weight: 500;
+  font-size: 1.1rem;
 }
 input {
+  color: #0d0f26;
   border: none;
   outline: none;
-  font-size: 1rem;
-  padding: 15px;
-  color: #fff;
-  background: #0d0f26;
-  border-radius: 0.4rem;
+  background: none;
+  font-weight: 400;
+  line-height: 1.5;
+  font-size: 1.37rem;
+  width: 100%;
 }
-
-.verify_btn {
+.inputWrapper {
+  display: flex;
+  align-items: center;
   margin: auto;
-  width: 120px;
-  letter-spacing: 1px;
-  font-weight: 500;
-  text-transform: uppercase;
-  background: #647bff;
-  cursor: pointer;
+}
+.inputWrapper {
+  font-size: 1rem;
+  width: 300px;
+  padding: 15px;
+  border: 2px solid #0d0f26;
+  border-radius: 0.4rem;
+  height: 50px;
 }
 
-.verify_btn:hover {
-  background-color: #546eff;
-  transition: 0.3s all linear;
-}
-
-img {
+.logo {
   width: 35px;
-  border-radius: 2rem;
+  padding: 2px;
+}
+img {
+  max-width: 100%;
   margin-top: 0;
-}
-.mtn {
-  /* display: none; */
-}
-
-.airtel {
-  /* display: none; */
-}
-
-.glo {
-  /* display: none; */
-}
-
-.etisalat {
-  /* display: none; */
 }
 .noloveLogo {
   display: none;
+}
+.hero-img {
+  margin: 0 auto;
+  max-width: 450px;
+}
+.hero-section {
+  padding: 0 10%;
+  text-align: center;
 }

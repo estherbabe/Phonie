@@ -9,10 +9,10 @@ const networkThings = {
 
 //======== telecom logos ========
 
-let mtnLogo = document.getElementsByClassName("mtn");
-let airtelLogo = document.getElementsByClassName("airtel");
-let gloLogo = document.getElementsByClassName("glo");
-let etisalatLogo = document.getElementsByClassName("etisalat");
+let mtnLogo = document.querySelector(".mtn");
+let airtelLogo = document.querySelector(".airtel");
+let gloLogo = document.querySelector(".glo");
+let etisalatLogo = document.querySelector(".etisalat");
 
 function startApp() {
   //======= getting the user's input value while they type =======
@@ -21,43 +21,81 @@ function startApp() {
   userInput.addEventListener("input", getUserInput);
   function getUserInput() {
     const userInputValue = userInput.value;
-    compareUserInput(userInputValue);
+    const userNetwork = findNetwork(userInputValue);
+    showLogo(userNetwork);
   }
 
   // ====== A function comparing user's input with prefixes in the object(networkThings)======
 
-  function compareUserInput(phoneNum) {
-    console.log(phoneNum);
+  function findNetwork(phoneNum) {
+    // console.log(phoneNum);
 
     // ====== creating an array to push all networkThings Keys & values ======
 
     let nameOfNetworks = [];
     for (let networks in networkThings) {
       nameOfNetworks.push(networks);
+      // const nwt = nameOfNetworks.push(networks);
+      // console.log(nwt);
     }
 
     // ====== looping through the created array above ======
     for (const item of nameOfNetworks) {
+      // ====== using the key to access values inside of the object(networkThings) ======
       let array = networkThings[item];
-      console.log(array);
+      // iterating through array to find a match of the first four numbers
+      let first4 = phoneNum.slice(0, 4);
       for (let i = 0; i < array.length; i++) {
-        let first4 = phoneNum.slice(0, 4);
-        if (first4 == array[i]) {
-          console.log(item);
+        // if first4 matches values inside array
+        if (first4 === array[i] && phoneNum.length <= 11) {
+          //console.log(item);
+          return item;
         }
       }
     }
+
+    return "";
   }
 
   function showLogo(network) {
     switch (network) {
       case "mtn":
+        // console.log("we are here");
         mtnLogo.classList.remove("noloveLogo");
         break;
 
+      case "airtel":
+        // console.log("we are here");
+        airtelLogo.classList.remove("noloveLogo");
+        break;
+
+      case "glo":
+        // console.log("we are here");
+        gloLogo.classList.remove("noloveLogo");
+        break;
+
+      case "etisalat":
+        // console.log("we are here");
+        etisalatLogo.classList.remove("noloveLogo");
+        break;
+
       default:
+        const array = [mtnLogo, airtelLogo, gloLogo, etisalatLogo];
+
+        array.forEach((x) => {
+          x.classList.add("noloveLogo");
+        });
+
         break;
     }
+  }
+
+  function removeLogo() {
+    const array = [mtnLogo, airtelLogo, gloLogo, etisalatLogo];
+    array.forEach((x) => {
+      //   // console.log(x);
+      x.classList.add("noloveLogo");
+    });
   }
 }
 // ======= DO NOT EDIT ============== //
